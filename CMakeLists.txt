@@ -9,6 +9,10 @@ add_executable(eegRcvr
         dataProc.c
         )
 
+add_library(kiss_fft
+    kissfft/kiss_fft.c
+    kissfft/kiss_fftr.c)
+
 pico_sdk_init()
 # create map/bin/hex file etc. 
 pico_add_extra_outputs(eegRcvr)
@@ -21,3 +25,4 @@ target_link_libraries(eegRcvr pico_stdlib)
 target_link_libraries(eegRcvr pico_multicore)
 target_link_libraries(eegRcvr pico_runtime)
 target_link_libraries(eegRcvr hardware_adc)
+target_link_libraries(eegRcvr kiss_fft)
