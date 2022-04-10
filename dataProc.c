@@ -11,6 +11,8 @@
 #include <stdbool.h>
 #include <stdio.h>
 
+//N.B. These buffers are never free'd, we reuse the memory for the entire
+//program lifespan
 static kiss_fft_cpx** ffts;
 static float** channelBufs;
 static size_t s_nSamples;
@@ -49,6 +51,8 @@ void processDataThread()
 	//do the FFTs
 	for(int i = 0; i < s_nChannels; i++)
 	{
-
+		kiss_fftr(fft_cfg, channelBufs[i], ffts[i]);
 	}
+
+	//TODO format and output ffts to serial
 }
