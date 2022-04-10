@@ -49,7 +49,7 @@ void initDataRecvr(int nSamples, int nChannels, int sampleRate)
 	setupADC(nChannels, sampleRate);
 }
 
-void setupADC(int nChannels, int samplePeriodMs)
+void setupADC(int nChannels, int samplePeriodus)
 {
 	//TODO clkdiv
 	//TODO validate nChannels:  1 <= nChannels <= 3
@@ -82,7 +82,7 @@ void setupADC(int nChannels, int samplePeriodMs)
 	irq_set_enabled(ADC_FIFO_IRQ, true);
 	//Set the sample rate
 	//MAX VALUE 65535
-	adc_set_clkdiv(10000);// * (samplePeriodMs/1000));
+	adc_set_clkdiv(48000000 * (samplePeriodus/1000000.0));
 }
 
 void recvThreadMain()
