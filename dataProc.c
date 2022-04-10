@@ -53,6 +53,24 @@ void processDataThread()
 	{
 		kiss_fftr(fft_cfg, channelBufs[i], ffts[i]);
 	}
+	for(int i = 0; i < s_nChannels; i++)
+	{
+		reportPower(i);
+	}
+}
 
-	//TODO format and output ffts to serial
+void reportPower(unsigned int channel)
+{
+	printf("%d", s_nSamples);
+	for(unsigned int i = 0; i < s_nSamples; i++)
+	{
+		printf(",%f", ffts[channel][i].r*ffts[channel][i].r + 
+				ffts[channel][i].i * ffts[channel][i].i);
+	}
+	printf("\n");
+}
+
+void reportTimeDomain(unsigned int channel)
+{
+
 }

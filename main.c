@@ -14,7 +14,7 @@ int main()
 	stdio_init_all();
 	printf("Starting Program!\n");
 
-	initDataRecvr(100,1, 1000);
+	initDataRecvr(100,1, 1365);
 	recvThreadMain();
 	for(;;)
 		printf("Running\n");
