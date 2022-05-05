@@ -1,7 +1,7 @@
 #ifndef DATA_PROC_H
 #define DATA_PROC_H
 
-void setupDataProc(size_t nSamples, unsigned int nChannels);
+void setupDataProc(size_t nSamples, unsigned int nChannels, unsigned int samplePeriodus);
 void processDataThread(void);
 void reportPower(unsigned int channel);
 void reportTimeDomain(unsigned int channel);

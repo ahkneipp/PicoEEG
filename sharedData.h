@@ -5,5 +5,6 @@
 
 extern volatile float* validBuffer;
 extern volatile bool newData;
+extern volatile unsigned long long int validChunkTimestamp_us;
 
 #endif
